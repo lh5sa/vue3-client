@@ -20,16 +20,17 @@
 </template>
 
 <script setup>
+import { getRandomBgColor } from "@/shared";
 import { reactive, ref, readonly } from "vue";
 import { checkEmailRules, checkPasswordRules } from "@/shared/formCheckRules";
 import { taskReducer, LOGIN } from "./taskReducer";
 
-const { bgColor, dispatch } = taskReducer;
+const bgColor = getRandomBgColor();
 
 const loginFormRef = ref();
 const loginForm = reactive({
-  email: "admin@qq.com",
-  password: "123456",
+  email: "",
+  password: "",
 });
 
 const loginRules = readonly({
@@ -41,7 +42,7 @@ const loginRules = readonly({
 const submit = () => {
   loginFormRef.value.validate(async (isPass) => {
     if (!isPass) return;
-    await dispatch(LOGIN)(loginForm);
+    await taskReducer.dispatch(LOGIN)(loginForm);
   });
 };
 </script>
