@@ -105,7 +105,7 @@ const searchForm = reactive({
 // 搜索
 function search() {
   typeof props.onSearch === "function" && props.onSearch(searchForm);
-  console.info("search called");
+  // console.info("search called");
 }
 
 // 重置
@@ -113,7 +113,7 @@ function reset() {
   searchForm.searchInput = "";
   searchForm.searchSelect = "";
   typeof props.onReset === "function" && props.onReset(searchForm);
-  console.info("reset called");
+  // console.info("reset called");
 }
 </script>
 

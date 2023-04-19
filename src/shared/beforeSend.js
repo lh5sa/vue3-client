@@ -5,6 +5,7 @@ import { mapState } from "pinia";
 import { useAuthStore } from "@/store/auth";
 
 // !! 注意: 签名的私钥必须和服务端验证的公钥为一对
+// TODO: 禁止debugger,然后用混淆代码工具混淆成乱码,稍微保护下这个key
 const privateKey = `-----BEGIN RSA PRIVATE KEY-----
 MIICXAIBAAKBgQDA/SVT71FB1DABDW41oq6I7vBa9IcFNuEKnIVcLTZmnGfj5hx5
 Z1f1IkKdNj1YYFhMh5PxsYREd+uUHVwljDR9ZnPxcy0PNyMGaUiwkYBfrJ7W2K/B
@@ -20,13 +21,6 @@ DRh38UpgiMgMA3J+ubBXmTlgUV9Mt6Z7OwiRM2q9522ztpbxYHd44qYV+cy6oQk2
 wdC50JMfRMkZ6ZKSqSUCQHQrJ2chU4Ims/4VVG/23k/eRmyjQDgAfTMw+XTVA2HF
 MrbS/QSAWgxBr7LUhgelbYYAhGujA6LjOzL+m1NyS4k=
 -----END RSA PRIVATE KEY-----`;
-
-/**
- * 如果是一样响应式对象, 获取原始对象
- * @param {object}
- * @returns {object}
- */
-const getRawObject = (obj) => (isProxy(obj) ? toRaw(obj) : obj);
 
 /**
  * 生成数据签名
@@ -55,7 +49,7 @@ function makeSignature(config) {
  * @param {*} config
  * @returns {String} 数据签名
  */
-export default function (config) {
+export default function(config) {
   const getters = mapState(useAuthStore, ["authUser"]);
   const user = getters.authUser();
   if (user && user.token) {

@@ -8,7 +8,7 @@
  * @param {String} option.children
  * @returns {Array}
  */
-export const getTree = function (data, option) {
+export const getTree = function(data, option) {
   const options = Object.assign(
     {
       root: 0,
@@ -18,40 +18,27 @@ export const getTree = function (data, option) {
     },
     option
   );
-
-  // 创建一个新的数据, 避免污染外界的参数
   const source = JSON.parse(JSON.stringify(data));
   const { root, id, pid, children } = options;
   const dataMap = {};
   const res = [];
-
   let itemId, itemPid;
   for (let item of source) {
     itemId = item[id];
     itemPid = item[pid];
-
     if (!dataMap[itemId]) {
-      // => {[item.id]: item}
       dataMap[itemId] = item;
     }
-
     if (itemPid === root) {
-      // 顶级类
       res.push(item);
       continue;
     }
-
-    // --- 处理非顶级类
     if (!dataMap[itemPid]) {
-      // 没有顶级类的二级类(一般是脏数据)
       dataMap[itemPid] = {};
     }
-
     if (!dataMap[itemPid][children]) {
-      // 没有children, 确保后面添加childre的时候不会报错
       dataMap[itemPid][children] = [];
     }
-
     dataMap[itemPid][children].push(item);
   }
 
@@ -93,7 +80,7 @@ export function getRandomBgColor() {
  * @returns {any}
  */
 export function memoize(fn, makeKey = JSON.stringify) {
-  const mem = async function (...args) {
+  const mem = async function(...args) {
     const key = makeKey(args);
     const cache = mem.cache;
     if (!cache.has(key)) {
