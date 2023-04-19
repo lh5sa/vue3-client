@@ -1,6 +1,6 @@
 ## 介绍
 
-学习了 dispatcher 思想, 想要做个项目实际验证下效果, 于是就有了这个项目
+学习了 vue3 & [dispatcher](https://github.com/liaohui5/vue3-dispatcher) 思想, 想要做个项目实际验证下效果, 于是就有了这个项目
 
 ## 快速开始
 
