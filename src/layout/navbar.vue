@@ -33,7 +33,7 @@ const goEditPassword = () => {
 };
 </script>
 
-<style lang="less" scoped>
+<style lang="scss" scoped>
 .navbar-wrapper {
   width: 100%;
   height: 100%;

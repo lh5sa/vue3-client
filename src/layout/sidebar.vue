@@ -23,7 +23,7 @@ const menus = $store.menus;
 const $route = useRoute();
 </script>
 
-<style lang="less">
+<style lang="scss">
 .sidebar-container {
   .el-menu-item,
   .el-sub-menu,

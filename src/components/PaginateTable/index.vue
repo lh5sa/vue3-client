@@ -117,7 +117,7 @@ function reset() {
 }
 </script>
 
-<style lang="less" scoped>
+<style lang="scss" scoped>
 .search-wrapper {
   display: flex;
   width: 100%;

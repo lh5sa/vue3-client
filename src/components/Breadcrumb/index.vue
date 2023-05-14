@@ -1,6 +1,6 @@
 <template>
   <div class="breadcrumb-wrapper">
-    <el-breadcrumb :separator-icon="ArrowRight">
+    <el-breadcrumb separator=">">
       <el-breadcrumb-item>首页</el-breadcrumb-item>
       <el-breadcrumb-item v-for="item in items" :key="item">{{ item }}</el-breadcrumb-item>
     </el-breadcrumb>
@@ -8,7 +8,6 @@
 </template>
 
 <script setup>
-import { ArrowRight } from "@element-plus/icons-vue"
 import { defineProps } from "vue";
 defineProps({
   items: {
@@ -18,7 +17,7 @@ defineProps({
 });
 </script>
 
-<style lang="less" scoped>
+<style lang="scss" scoped>
 .breadcrumb-wrapper {
   padding-bottom: 20px;
 }

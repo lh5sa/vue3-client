@@ -136,7 +136,7 @@ const submitForm = () => {
 };
 </script>
 
-<style lang="less">
+<style lang="scss">
 .el-radio__inner,
 .el-radio__inner::after {
   border-radius: 100%;

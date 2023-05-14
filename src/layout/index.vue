@@ -19,7 +19,7 @@ import Navbar from "@/layout/NavBar.vue";
 import Sidebar from "@/layout/SideBar.vue";
 </script>
 
-<style lang="less">
+<style lang="scss">
 .layout-container {
   width: 100%;
   height: 100%;

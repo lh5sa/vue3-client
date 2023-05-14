@@ -47,7 +47,7 @@ const submit = () => {
 };
 </script>
 
-<style lang="less" scoped>
+<style lang="scss" scoped>
 .login-page {
   /* background: linear-gradient(to right, #3f2b96, #a8c0ff); */
   height: 100%;

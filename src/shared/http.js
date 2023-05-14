@@ -4,9 +4,9 @@ import $router from "@/router/index";
 import beforeSend from "@/shared/beforeSend";
 import { ElMessage } from "element-plus";
 
+const baseURL = import.meta.env.VUE_APP_BASE_API_URL || "";
 const http = axios.create({
-  /* eslint-disable */
-  baseURL: process.env.VUE_APP_BASE_API_URL || "",
+  baseURL,
   timeout: 3000,
 });
 
